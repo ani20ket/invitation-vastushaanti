@@ -17,7 +17,8 @@ const DETAILS = {
     'वाढवावी, ही नम्र विनंती.',
   ],
 
-  dateLine: 'शनिवार २२ ऑगस्ट २०२६ रोजी सकाळ ८ वा',
+  dateLine: 'शनिवार २२ ऑगस्ट २०२६ रोजी सकाळ ८ वा ',
+  dateLine2: 'स्नेहभोजन दु. १२ वा ते आपल्या आगमनापर्यंत',
   dateSubline: 'करण्याचे योजीले आहे तरी आपली उपस्थीती प्रार्थनीय आहे.',
 
   addressTitle: 'घराचा पत्ता',
@@ -144,6 +145,7 @@ export default function App() {
         {/* -- Date & time ----------------------------------------------- */}
         <div className="date-bar">
           <p className="date-bar__date">{DETAILS.dateLine}</p>
+          <p className="date-bar__date">{DETAILS.dateLine2}</p>
           <p className="date-bar__sub">{DETAILS.dateSubline}</p>
         </div>
 
