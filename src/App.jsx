@@ -22,7 +22,7 @@ const DETAILS = {
   dateSubline: 'करण्याचे योजीले आहे तरी आपली उपस्थीती प्रार्थनीय आहे.',
 
   addressTitle: 'घराचा पत्ता',
-  addressLines: ['महालक्ष्मी,', '४९, सावतानगर, ठाकरे मळा', 'हिरावाडी, नाशिक'],
+  addressLines: ['महालक्ष्मी,', '४९, सावतानगर, ठाकरे मळा', 'मेरी लिंक रोडजवळ, नाशिक'],
   mapsLink: 'https://maps.app.goo.gl/D68g6JcgNcZh3D2D6?g_st=ic',
   directionsLabel: 'दिशा पहा',
 
