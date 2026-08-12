@@ -214,7 +214,6 @@ export default function App() {
             className="house-photo"
             label="house-photo.png"
           />
-          <figcaption>{details.footerNote}</figcaption>
         </figure>
 
         {/* -- Hosts / inviting family ------------------------------------ */}
