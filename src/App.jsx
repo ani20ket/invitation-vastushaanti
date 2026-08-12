@@ -1,45 +1,65 @@
 import React, { useState } from 'react'
 import './index.css'
 
-/* ------------------------------------------------------------------ */
-/*  EDIT YOUR INVITATION DETAILS HERE                                  */
-/* ------------------------------------------------------------------ */
-const DETAILS = {
-  invocation: '|| श्री गणेशाय नमः ||',
-  titleSubtitle: '',
-
-  message: [
-    'आपणांस कळविण्यात अत्यंत आनंद होत आहे की आमच्या नूतन वास्तूचा ',
-    'वास्तुशांती व गृहप्रवेश सोहळा आयोजित करण्यात आला आहे.',
-  ],
-  request: [
-    'आपण सहकुटुंब उपस्थित राहून कार्यक्रमाची शोभा',
-    'वाढवावी, ही नम्र विनंती.',
-  ],
-
-  dateLine: 'शनिवार २२ ऑगस्ट २०२६ रोजी सकाळ ८ वा ',
-  dateLine2: 'गृहप्रवेश व स्नेहभोजन दु. १२ वा',
-  dateSubline: '',
-
-  addressTitle: 'घराचा पत्ता',
-  addressLines: ['महालक्ष्मी,', '४९, सावतानगर, ठाकरे मळा', 'मेरी लिंक रोडजवळ, नाशिक'],
-  mapsLink: 'https://maps.app.goo.gl/D68g6JcgNcZh3D2D6?g_st=ic',
-  directionsLabel: 'Location',
-
-  hostsTitle: 'निमंत्रक',
-  matriarch: 'श्रीमती शकुंतला रघुनाथ थोरात',
-  couples: [
-    'सौ. मीरा व श्री. उद्धव रघुनाथ थोरात',
-    'सौ. स्वाती व श्री. देविदास रघुनाथ थोरात',
-    'सौ. ईश्वरी व श्री. गौरव उद्धव थोरात',
-    'सौ. भाग्यश्री व श्री. जयंत उद्धव थोरात',
-  ],
-  children: 'चि. अनिकेत, कु. अनुश्री, चि. श्रेयस',
-
-  closing: ['संपर्क: 9833002056, 9820397903', '9833706046'],
-
-  houseCaption: '',
-  footerNote: 'आपली उपस्थिती हाच आमचा आहेर',
+const LANGUAGE_CONTENT = {
+  mr: {
+    invocation: '|| श्री गणेशाय नमः ||',
+    titleSubtitle: '',
+    message: [
+      'आपणांस कळविण्यात अत्यंत आनंद होत आहे की आमच्या नूतन वास्तूचा ',
+      'वास्तुशांती व गृहप्रवेश सोहळा आयोजित करण्यात आला आहे.',
+    ],
+    request: [
+      'आपण सहकुटुंब उपस्थित राहून कार्यक्रमाची शोभा',
+      'वाढवावी, ही नम्र विनंती.',
+    ],
+    dateLine: 'शनिवार २२ ऑगस्ट २०२६ रोजी सकाळ ८ वा ',
+    dateLine2: 'गृहप्रवेश व स्नेहभोजन दु. १२ वा',
+    dateSubline: '',
+    addressTitle: 'घराचा पत्ता',
+    addressLines: ['महालक्ष्मी,', '४९, सावतानगर, ठाकरे मळा', 'डॉ. नानासाहेब धर्माधिकारी मार्ग, नाशिक'],
+    directionsLabel: 'Location',
+    hostsTitle: 'निमंत्रक',
+    matriarch: 'श्रीमती शकुंतला रघुनाथ थोरात',
+    couples: [
+      'सौ. मीरा व श्री. उद्धव रघुनाथ थोरात',
+      'सौ. स्वाती व श्री. देविदास रघुनाथ थोरात',
+      'सौ. ईश्वरी व श्री. गौरव उद्धव थोरात',
+      'सौ. भाग्यश्री व श्री. जयंत उद्धव थोरात',
+    ],
+    children: 'चि. अनिकेत, कु. अनुश्री, चि. श्रेयस',
+    closing: ['संपर्क: 9833002056, 9820397903', '9833706046'],
+    footerNote: 'आपली उपस्थिती हाच आमचा आहेर',
+  },
+  en: {
+    invocation: '|| Shri Ganeshaya Namah ||',
+    titleSubtitle: '',
+    message: [
+      'We are delighted to invite you to the auspicious ceremony of our new home’s',
+      'Vastu Shanti and Griha Pravesh.',
+    ],
+    request: [
+      'Your presence with your family will add grace to the occasion.',
+      'We humbly request your blessings and company.',
+    ],
+    dateLine: 'Saturday, 22 August 2026 at 8:00 AM',
+    dateLine2: 'Griha Pravesh & Lunch at 12:00 PM',
+    dateSubline: '',
+    addressTitle: 'Address',
+    addressLines: ['Mahalaxmi,', '49, Savatanagar, Thakare Mala', 'Dr Nanasaheb Dharmadhikari Marg, Nashik'],
+    directionsLabel: 'Directions',
+    hostsTitle: 'Invited By',
+    matriarch: 'Smt. Shakuntala Raghunath Thorat',
+    couples: [
+      'Sau. Meera & Shri Uddhav Raghunath Thorat',
+      'Sau. Swati & Shri Devidas Raghunath Thorat',
+      'Sau. Ishwari & Shri Gaurav Uddhav Thorat',
+      'Sau. Bhagyashree & Shri Jayant Uddhav Thorat',
+    ],
+    children: 'Aniket, Anushree, Shreyas',
+    closing: ['Contact: 9833002056, 9820397903', '9833706046'],
+    footerNote: 'Your presence is our greatest blessing',
+  },
 }
 
 /* ------------------------------------------------------------------ */
@@ -110,30 +130,50 @@ function BananaLeaves({ flip = false }) {
 /*  APP                                                                 */
 /* ------------------------------------------------------------------ */
 export default function App() {
+  const [language, setLanguage] = useState('mr')
+  const details = LANGUAGE_CONTENT[language]
+
   return (
     <div className="page">
       <main className="card">
         <Garland />
         <Garland flip />
 
+        <div className="language-toggle" aria-label="Language selector">
+          <button
+            type="button"
+            className={language === 'mr' ? 'is-active' : ''}
+            onClick={() => setLanguage('mr')}
+          >
+            मराठी
+          </button>
+          <button
+            type="button"
+            className={language === 'en' ? 'is-active' : ''}
+            onClick={() => setLanguage('en')}
+          >
+            English
+          </button>
+        </div>
+
         {/* -- Invocation + title ------------------------------------ */}
         <header className="card__header">
-          <div className="invocation">{DETAILS.invocation}</div>
+          <div className="invocation">{details.invocation}</div>
           <img
             className="title-image"
             src={ASSET_PATHS.titleImage}
             alt="वास्तुशांती"
           />
-          <p className="title-subtitle">{DETAILS.titleSubtitle}</p>
+          <p className="title-subtitle">{details.titleSubtitle}</p>
         </header>
 
         {/* -- Invitation message -------------------------------------- */}
         <section className="message">
-          {DETAILS.message.map((line, i) => (
+          {details.message.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
           <p className="message__request">
-            {DETAILS.request.map((line, i) => (
+            {details.request.map((line, i) => (
               <span key={i}>
                 {line}
                 <br />
@@ -144,25 +184,25 @@ export default function App() {
 
         {/* -- Date & time ----------------------------------------------- */}
         <div className="date-bar">
-          <p className="date-bar__date">{DETAILS.dateLine}</p>
-          <p className="date-bar__date">{DETAILS.dateLine2}</p>
-          <p className="date-bar__sub">{DETAILS.dateSubline}</p>
+          <p className="date-bar__date">{details.dateLine}</p>
+          <p className="date-bar__date">{details.dateLine2}</p>
+          <p className="date-bar__sub">{details.dateSubline}</p>
         </div>
 
         {/* -- Address + directions --------------------------------------- */}
         <section className="address">
-          <h2>{DETAILS.addressTitle}</h2>
-          {DETAILS.addressLines.map((line, i) => (
+          <h2>{details.addressTitle}</h2>
+          {details.addressLines.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
           <a
             className="directions-btn"
-            href={DETAILS.mapsLink}
+            href="https://maps.app.goo.gl/D68g6JcgNcZh3D2D6?g_st=ic"
             target="_blank"
             rel="noopener noreferrer"
           >
             <span className="directions-btn__pin">📍</span>
-            {DETAILS.directionsLabel}
+            {details.directionsLabel}
           </a>
         </section>
 
@@ -170,28 +210,28 @@ export default function App() {
         <figure className="house-photo-wrap">
           <ImageAsset
             src={ASSET_PATHS.housePhoto}
-            alt={DETAILS.houseCaption}
+            alt={details.footerNote}
             className="house-photo"
             label="house-photo.png"
           />
-          <figcaption>{DETAILS.houseCaption}</figcaption>
+          <figcaption>{details.footerNote}</figcaption>
         </figure>
 
         {/* -- Hosts / inviting family ------------------------------------ */}
         <section className="hosts">
-          <h2>{DETAILS.hostsTitle}</h2>
-          <p className="hosts__matriarch">{DETAILS.matriarch}</p>
-          {DETAILS.couples.map((line, i) => (
+          <h2>{details.hostsTitle}</h2>
+          <p className="hosts__matriarch">{details.matriarch}</p>
+          {details.couples.map((line, i) => (
             <p className="hosts__couple" key={i}>
               {line}
             </p>
           ))}
-          <p className="hosts__children">{DETAILS.children}</p>
+          <p className="hosts__children">{details.children}</p>
         </section>
 
         {/* -- Closing ---------------------------------------------------- */}
         <section className="closing">
-          {DETAILS.closing.map((line, i) => (
+          {details.closing.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
         </section>
@@ -200,7 +240,7 @@ export default function App() {
         <BananaLeaves flip />
 
         <footer className="footer">
-          <span className="footer__note">{DETAILS.footerNote}</span>
+          <span className="footer__note">{details.footerNote}</span>
         </footer>
       </main>
     </div>

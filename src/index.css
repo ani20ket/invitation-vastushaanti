@@ -77,6 +77,45 @@ body {
   transform: scaleX(-1);
 }
 
+/* ---------------- Language Toggle ---------------- */
+.language-toggle {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 18px;
+  padding: 6px;
+  border: 1px solid rgba(10, 78, 74, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.language-toggle button {
+  border: none;
+  background: transparent;
+  color: var(--teal-deep);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.language-toggle button.is-active {
+  background: var(--teal);
+  color: var(--cream);
+}
+
+.language-toggle button:hover,
+.language-toggle button:focus-visible {
+  outline: none;
+  transform: translateY(-1px);
+}
+
 /* ---------------- Header ---------------- */
 .card__header {
   position: relative;
