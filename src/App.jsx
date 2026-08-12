@@ -9,8 +9,8 @@ const DETAILS = {
   titleSubtitle: '',
 
   message: [
-    'आपणांस कळविण्यात अत्यंत आनंद होत आहे की आमच्या नव्या घराच्या',
-    'शुभप्रसंगी वास्तुशांती व गृहप्रवेश सोहळा आयोजित करण्यात आला आहे.',
+    'आपणांस कळविण्यात अत्यंत आनंद होत आहे की आमच्या नूतन वास्तूचा ',
+    'वास्तुशांती व गृहप्रवेश सोहळा आयोजित करण्यात आला आहे.',
   ],
   request: [
     'आपण सहकुटुंब उपस्थित राहून कार्यक्रमाची शोभा',
@@ -18,13 +18,13 @@ const DETAILS = {
   ],
 
   dateLine: 'शनिवार २२ ऑगस्ट २०२६ रोजी सकाळ ८ वा ',
-  dateLine2: 'स्नेहभोजन दु. १२ वा ते आपल्या आगमनापर्यंत',
-  dateSubline: 'करण्याचे योजीले आहे तरी आपली उपस्थीती प्रार्थनीय आहे.',
+  dateLine2: 'गृहप्रवेश व स्नेहभोजन दु. १२ वा',
+  dateSubline: '',
 
   addressTitle: 'घराचा पत्ता',
   addressLines: ['महालक्ष्मी,', '४९, सावतानगर, ठाकरे मळा', 'मेरी लिंक रोडजवळ, नाशिक'],
   mapsLink: 'https://maps.app.goo.gl/D68g6JcgNcZh3D2D6?g_st=ic',
-  directionsLabel: 'दिशा पहा',
+  directionsLabel: 'Location',
 
   hostsTitle: 'निमंत्रक',
   matriarch: 'श्रीमती शकुंतला रघुनाथ थोरात',
@@ -36,10 +36,10 @@ const DETAILS = {
   ],
   children: 'चि. अनिकेत, कु. अनुश्री, चि. श्रेयस',
 
-  closing: ['आपल्या उपस्थितीची अपेक्षा.', 'आपला स्नेहांकित, थोरात कुटुंब'],
+  closing: ['संपर्क: 9833002056, 9820397903', '9833706046'],
 
   houseCaption: '',
-  footerNote: 'आपली उपस्थिती हाच आहेर',
+  footerNote: 'आपली उपस्थिती हाच आमचा आहेर',
 }
 
 /* ------------------------------------------------------------------ */
@@ -181,7 +181,6 @@ export default function App() {
         <section className="hosts">
           <h2>{DETAILS.hostsTitle}</h2>
           <p className="hosts__matriarch">{DETAILS.matriarch}</p>
-          <div className="hosts__divider" aria-hidden="true" />
           {DETAILS.couples.map((line, i) => (
             <p className="hosts__couple" key={i}>
               {line}

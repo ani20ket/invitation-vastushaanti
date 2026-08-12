@@ -249,8 +249,8 @@ body {
 .hosts__matriarch {
   margin: 0 0 10px;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.15rem;
+  font-weight: 600;
+  font-size: 0.98rem;
   color: var(--maroon);
 }
 
@@ -272,7 +272,7 @@ body {
 .hosts__children {
   margin: 12px 0 0;
   font-size: 0.9rem;
-  font-style: italic;
+  font-weight: 600;
   color: var(--teal-deep);
 }
 
