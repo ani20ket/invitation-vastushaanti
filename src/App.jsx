@@ -4,9 +4,10 @@ import './index.css'
 const LANGUAGE_CONTENT = {
   mr: {
     invocation: '|| श्री गणेशाय नमः ||',
+    invocationExtra: '|| श्री कुलस्वामिनी प्रसन्न ||',
     titleSubtitle: '',
     message: [
-      'आपणांस कळविण्यात अत्यंत आनंद होत आहे की आमच्या नूतन वास्तूचा ',
+      'आपणांस कळविण्यात अत्यंत आनंद होत आहे की आमच्या नूतन वास्तूसाठी ',
       'वास्तुशांती व गृहप्रवेश सोहळा आयोजित करण्यात आला आहे.',
     ],
     request: [
@@ -14,7 +15,7 @@ const LANGUAGE_CONTENT = {
       'वाढवावी, ही नम्र विनंती.',
     ],
     dateLine: 'शनिवार २२ ऑगस्ट २०२६ रोजी सकाळ ८ वा ',
-    dateLine2: 'गृहप्रवेश व स्नेहभोजन दु. १२ वा',
+    dateLine2: 'गृहप्रवेश दु. १२ वा, स्नेहभोजन आपल्या आगमनापर्यंत',
     dateSubline: '',
     addressTitle: 'घराचा पत्ता',
     addressLines: ['महालक्ष्मी,', '४९, सावतानगर, ठाकरे मळा', 'डॉ. नानासाहेब धर्माधिकारी मार्ग, नाशिक'],
@@ -33,6 +34,7 @@ const LANGUAGE_CONTENT = {
   },
   en: {
     invocation: '|| Shri Ganeshaya Namah ||',
+    invocationExtra: '|| Shri Kulswamini Prasanna ||',
     titleSubtitle: '',
     message: [
       'We are delighted to invite you to the auspicious ceremony of our new home’s',
@@ -43,10 +45,10 @@ const LANGUAGE_CONTENT = {
       'We humbly request your blessings and company.',
     ],
     dateLine: 'Saturday, 22 August 2026 at 8:00 AM',
-    dateLine2: 'Griha Pravesh & Lunch at 12:00 PM',
+    dateLine2: 'Griha Pravesh at 12:00 PM, followed by Lunch',
     dateSubline: '',
     addressTitle: 'Address',
-    addressLines: ['Mahalaxmi,', '49, Savatanagar, Thakare Mala', 'Dr Nanasaheb Dharmadhikari Marg, Nashik'],
+    addressLines: ['Mahalakshmi,', '49, Savatanagar, Thakare Mala', 'Dr Nanasaheb Dharmadhikari Marg, Nashik'],
     directionsLabel: 'Directions',
     hostsTitle: 'Invited By',
     matriarch: 'Smt. Shakuntala Raghunath Thorat',
@@ -158,7 +160,10 @@ export default function App() {
 
         {/* -- Invocation + title ------------------------------------ */}
         <header className="card__header">
-          <div className="invocation">{details.invocation}</div>
+          <div className="invocation-block">
+            <div className="invocation">{details.invocation}</div>
+            <div className="invocation-extra">{details.invocationExtra}</div>
+          </div>
           <img
             className="title-image"
             src={ASSET_PATHS.titleImage}
