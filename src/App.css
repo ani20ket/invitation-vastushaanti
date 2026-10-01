@@ -1,0 +1,40 @@
+:root{
+  --bg:#fdecf0; --bg2:#f9c9d8; --ink:#5a1d36; --soft:#a8587a; --arch:#fff8fa; --arch-line:#f0a9c0; --rose:#d6336c;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#2a0f1b;--bg2:#4a1630;--ink:#ffe3ec;--soft:#e79bb7;--arch:#3a1426;--arch-line:#9c3d63;--rose:#ff7aa6}
+}
+:root[data-theme="dark"]{--bg:#2a0f1b;--bg2:#4a1630;--ink:#ffe3ec;--soft:#e79bb7;--arch:#3a1426;--arch-line:#9c3d63;--rose:#ff7aa6}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  background:var(--bg);
+  background-image:radial-gradient(ellipse 80% 60% at 50% 0%,var(--bg2),transparent 70%);
+  background-attachment:fixed;
+  color:var(--ink);font-family:"Jost",system-ui,sans-serif;font-weight:300;
+}
+main{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 20px}
+.photo{width:clamp(180px,48vw,300px);margin:0 0 28px;border-radius:14px;overflow:hidden}
+.photo img{width:100%;height:auto;display:block}
+.lead{font-size:1.05rem;letter-spacing:.04em;color:var(--soft);margin:0 0 12px}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;
+  font-size:clamp(2.8rem,10vw,6.5rem);line-height:1;margin:0;letter-spacing:-.01em}
+h1 .amp{display:block;font-size:.45em;color:var(--rose);font-weight:500;margin:.15em 0}
+.date{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.2rem,3vw,1.6rem);margin:20px 0 40px;color:var(--soft)}
+.row{display:flex;gap:clamp(10px,2.5vw,24px);justify-content:center;flex-wrap:wrap}
+.arch{
+  width:clamp(72px,20vw,128px);aspect-ratio:3/4;background:var(--arch);
+  border:1.5px solid var(--arch-line);border-radius:999px 999px 14px 14px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.num{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(2rem,8vw,4rem);line-height:1;font-variant-numeric:tabular-nums;color:var(--rose)}
+.lab{font-size:clamp(.75rem,2vw,.95rem);margin-top:8px;color:var(--soft)}
+.done{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:clamp(2rem,7vw,3.5rem);color:var(--rose)}
+.foot{margin-top:44px;color:var(--soft);font-size:.95rem}
+@media (prefers-reduced-motion:no-preference){
+  .row{animation:rise 1s ease-out both}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
