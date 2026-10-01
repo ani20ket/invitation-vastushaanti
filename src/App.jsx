@@ -42,7 +42,7 @@ export default function App() {
       <h1>
         Aniket<span className="amp">&amp;</span>Meetali
       </h1>
-      <p className="date">are getting married on 3 February 2027</p>
+      <p className="date">are getting married on 2 February 2027</p>
       {t.done ? (
         <div className="done">Today is the day!</div>
       ) : (
