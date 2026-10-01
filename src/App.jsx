@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import couple from "./assets/couple.jpg";
 
 // 3 February 2027, 12:00 AM IST (UTC+05:30), the same moment for every viewer
-const TARGET = new Date("2027-02-03T00:00:00+05:30").getTime();
+const TARGET = new Date("2027-02-02T00:00:00+05:30").getTime();
 
 function remaining() {
   const diff = Math.max(0, TARGET - Date.now());
